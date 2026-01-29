@@ -2,6 +2,6 @@
   "firmware": "firmware_v2.bin",
   "hash": "OTdjMDVhOWQxZGRlZmJkN2UxNzcyNWUwNGZmNjJlNjQ2ZWRhYWFhYzAzNzI1OWMyMDM5NjNhODM2MDMzMTU1OQo=",
   "signature": "aAuDl+mwwS+P5dzOQiwdmEUazuvD2glslQ0E7YT3dkcBWK+8dz7+DoiKBaTEqUDa1ZAswwp+Vif/tI3LfpP+I4Ym+xFkXE5OYuAlSCge0f8LwvhF049TvEzJvbhxBTAE8ZsHblJJWsseSu0mSsViI2amy0UrrlKv77+t+NCrFJwR/zDey1WBPZ4FN327JPYtCIm0amO95AjxJqq//K6pCUwXym0M2/BqlZqh6DTjz+0SQNHS4ZvHoKwCLkHYFAFXpnQO/Jgu7lvYnoAnhRaN73nFCAOicLzxd4hpWAh6zFb0HFObEZ/Qp/bGy1BTFzyvcckpflUZRZ+OQpWgVfSLuQ==",
-  "url": "https://niyamath.pythonanywhere.com/firmware/firmware_v2.bin",
+  "url": "https://secure-ota-server.onrender.com/firmware/firmware_v2.bin",
   "version": 2
 }
