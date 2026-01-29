@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "firmware": "firmware_v2.bin",
+  "hash": "EeZf8pruHhmMiJEtOkd/nlxzlzWE4CrUS3WHrTE2Dcs=",
+  "signature": "MgTmQAloqZwThraZ/Lo2EjIyhW9zaQIiKSWeRzQbtGrgbWqDygN+Gx06dGV9kRxdgdjXJkXP9Kv7gu0cRflzGsy76Olxf0YrnJjJH0k3BtACttml7cRK6uE1rdfbvGzcalmM+R3xZcmVN3PPz4p8jM+oJn86IuPia/vzIsdNy7DwgVX4hHeCAEeAOUk+nJSMxgazPqecOrr9Msvmfr+kOR+uit/Frk+pFdcCxks2Pdckmh5Pa7a7e9ia9hSgF3mh3MCOy5Jpe9o0SjYi81bkrn9pxHDhMAQGRjSdkXFwL6EBfzeFSTFt/D8FVi03ZiW2BoDpIFKGN4YXN5K6fveCxg==",
+  "url": "http://127.0.0.1:8000/firmware/firmware_v2.bin"
+}

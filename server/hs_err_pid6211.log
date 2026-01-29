@@ -1,0 +1,107 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007763b729fff4, pid=6211, tid=6243
+#
+# JRE version: OpenJDK Runtime Environment Temurin-17.0.8.1+1 (17.0.8.1+1) (build 17.0.8.1+1)
+# Java VM: OpenJDK 64-Bit Server VM Temurin-17.0.8.1+1 (17.0.8.1+1, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libc.so.6+0x9fff4]  pthread_mutex_lock+0x4
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -F%F -- %E" (or dumping to /home/niyamath/Secure_OTA_Project/server/core.6211)
+#
+# If you would like to submit a bug report, please visit:
+#   https://github.com/adoptium/adoptium-support/issues
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,address=8771,server=y,suspend=y,quiet=y -Djna.nosys=true -Djava.library.path=:/snap/processing/22/opt/processing/lib/app/resources/core/library:/snap/processing/22/opt/processing/lib/app/resources/modes/java/libraries/net/library:/snap/processing/22/opt/processing/lib/runtime/lib::/snap/processing/22/opt/processing/lib/app:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib -ea processing.core.PApplet --location=660,298 --external --display=1 --sketch-path=/tmp/processing/709a376f-f832-4890-acb5-6b2154c1d82b/sketch_251203a sketch_251203a
+
+Host: 13th Gen Intel(R) Core(TM) i5-1334U, 9 cores, 9G, Ubuntu 24.04.3 LTS
+Time: Wed Dec  3 17:43:53 2025 UTC elapsed time: 11.383021 seconds (0d 0h 0m 11s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007763b0419730):  JavaThread "AWT-EventQueue-0" [_thread_in_native, id=6243, stack(0x0000776332af3000,0x0000776332bf3000)]
+
+Stack: [0x0000776332af3000,0x0000776332bf3000],  sp=0x0000776332beef58,  free space=1007k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libc.so.6+0x9fff4]  pthread_mutex_lock+0x4
+C  [libX11.so.6+0x718d3]  _XimMakeICAttrIDList+0x53
+C  [libX11.so.6+0x6426f]
+C  [libX11.so.6+0x4eae2]  XGetICValues+0x122
+C  [libawt_xawt.so+0x380e8]  Java_sun_awt_X11InputMethodBase_isCompositionEnabledNative+0xc8
+j  sun.awt.X11InputMethodBase.isCompositionEnabledNative()Z+0 java.desktop@17.0.8.1
+j  sun.awt.X11InputMethodBase.isCompositionEnabled()Z+1 java.desktop@17.0.8.1
+j  sun.awt.X11InputMethodBase.getCompositionState()Z+10 java.desktop@17.0.8.1
+j  sun.awt.X11InputMethod.deactivate(Z)V+7 java.desktop@17.0.8.1
+j  sun.awt.im.InputContext.deactivateInputMethod(Z)V+24 java.desktop@17.0.8.1
+j  sun.awt.im.InputContext.focusLost(Ljava/awt/Component;Z)V+21 java.desktop@17.0.8.1
+j  sun.awt.im.InputContext.dispatchEvent(Ljava/awt/AWTEvent;)V+121 java.desktop@17.0.8.1
+j  sun.awt.im.InputMethodContext.dispatchEvent(Ljava/awt/AWTEvent;)V+58 java.desktop@17.0.8.1
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+308 java.desktop@17.0.8.1
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2 java.desktop@17.0.8.1
+j  java.awt.KeyboardFocusManager.redispatchEvent(Ljava/awt/Component;Ljava/awt/AWTEvent;)V+7 java.desktop@17.0.8.1
+j  java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(Ljava/awt/Component;Ljava/awt/AWTEvent;)Z+351 java.desktop@17.0.8.1
+j  java.awt.DefaultKeyboardFocusManager.dispatchEvent(Ljava/awt/AWTEvent;)Z+1259 java.desktop@17.0.8.1
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+131 java.desktop@17.0.8.1
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2 java.desktop@17.0.8.1
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+41 java.desktop@17.0.8.1
+j  java.awt.EventQueue$4.run()Ljava/lang/Void;+32 java.desktop@17.0.8.1
+j  java.awt.EventQueue$4.run()Ljava/lang/Object;+1 java.desktop@17.0.8.1
+J 662 c1 java.security.AccessController.executePrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/lang/Class;)Ljava/lang/Object; java.base@17.0.8.1 (65 bytes) @ 0x000077639950e24c [0x000077639950e0e0+0x000000000000016c]
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+13 java.base@17.0.8.1
+j  java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+18 java.base@17.0.8.1
+j  java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+6 java.base@17.0.8.1
+j  java.awt.EventQueue$5.run()Ljava/lang/Void;+11 java.desktop@17.0.8.1
+j  java.awt.EventQueue$5.run()Ljava/lang/Object;+1 java.desktop@17.0.8.1
+J 662 c1 java.security.AccessController.executePrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/lang/Class;)Ljava/lang/Object; java.base@17.0.8.1 (65 bytes) @ 0x000077639950e24c [0x000077639950e0e0+0x000000000000016c]
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+13 java.base@17.0.8.1
+j  java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+18 java.base@17.0.8.1
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+73 java.desktop@17.0.8.1
+j  java.awt.SentEvent.dispatch()V+14 java.desktop@17.0.8.1
+j  java.awt.DefaultKeyboardFocusManager$DefaultKeyboardFocusManagerSentEvent.dispatch()V+51 java.desktop@17.0.8.1
+j  java.awt.DefaultKeyboardFocusManager.sendMessage(Ljava/awt/Component;Ljava/awt/AWTEvent;)Z+32 java.desktop@17.0.8.1
+j  java.awt.DefaultKeyboardFocusManager.dispatchEvent(Ljava/awt/AWTEvent;)Z+1501 java.desktop@17.0.8.1
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+131 java.desktop@17.0.8.1
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+42 java.desktop@17.0.8.1
+j  java.awt.Window.dispatchEventImpl(Ljava/awt/AWTEvent;)V+19 java.desktop@17.0.8.1
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2 java.desktop@17.0.8.1
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+41 java.desktop@17.0.8.1
+j  java.awt.EventQueue$4.run()Ljava/lang/Void;+32 java.desktop@17.0.8.1
+j  java.awt.EventQueue$4.run()Ljava/lang/Object;+1 java.desktop@17.0.8.1
+J 662 c1 java.security.AccessController.executePrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/lang/Class;)Ljava/lang/Object; java.base@17.0.8.1 (65 bytes) @ 0x000077639950e24c [0x000077639950e0e0+0x000000000000016c]
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+13 java.base@17.0.8.1
+j  java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+18 java.base@17.0.8.1
+j  java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+6 java.base@17.0.8.1
+j  java.awt.EventQueue$5.run()Ljava/lang/Void;+11 java.desktop@17.0.8.1
+j  java.awt.EventQueue$5.run()Ljava/lang/Object;+1 java.desktop@17.0.8.1
+J 662 c1 java.security.AccessController.executePrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/lang/Class;)Ljava/lang/Object; java.base@17.0.8.1 (65 bytes) @ 0x000077639950e24c [0x000077639950e0e0+0x000000000000016c]
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+13 java.base@17.0.8.1
+j  java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+18 java.base@17.0.8.1
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+73 java.desktop@17.0.8.1
+j  java.awt.SequencedEvent.dispatch()V+150 java.desktop@17.0.8.1
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+21 java.desktop@17.0.8.1
+j  java.awt.EventQueue$4.run()Ljava/lang/Void;+32 java.desktop@17.0.8.1
+j  java.awt.EventQueue$4.run()Ljava/lang/Object;+1 java.desktop@17.0.8.1
+J 662 c1 java.security.AccessController.executePrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/lang/Class;)Ljava/lang/Object; java.base@17.0.8.1 (65 bytes) @ 0x000077639950e24c [0x000077639950e0e0+0x000000000000016c]
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+13 java.base@17.0.8.1
+j  java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+18 java.base@17.0.8.1
+j  java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+6 java.base@17.0.8.1
+j  java.awt.EventQueue$5.run()Ljava/lang/Void;+11 java.desktop@17.0.8.1
+j  java.awt.EventQueue$5.run()Ljava/lang/Object;+1 java.desktop@17.0.8.1
+J 662 c1 java.security.AccessController.executePrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/lang/Class;)Ljava/lang/Object; java.base@17.0.8.1 (65 bytes) @ 0x000077639950e24c [0x000077639950e0e0+0x000000000000016c]
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+13 java.base@17.0.8.1
+j  java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+18 java.base@17.0.8.1
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+73 java.desktop@17.0.8.1
+j  java.awt.EventDispatchThread.pumpOneEventForFilters(I)V+78 java.desktop@17.0.8.1
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+35 java.desktop@17.0.8.1
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11 java.desktop@17.0.8.1
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4 java.desktop@17.0.8.1
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3 java.desktop@17.0.8.1
+j  java.awt.EventDispatchThread.run()V+9 java.desktop@17.0.8.1
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x827355]
