@@ -1,7 +1,7 @@
 {
   "firmware": "firmware_v2.bin",
-  "hash": "6NJlagS/DOzoOuYvJxSMxhZevFHbMWTKKebNgemWdRQ=",
-  "signature": "mqJwBscu7p+sSnJaRBddHBZsM2QavygUw3Jgs7y1r9plhRq5rVm829h+gf2dOYToADKHV8Myjz8PLCr8bOSScGwPGk9G2qRKg8chHBH6MMB0hV8ko5y4jt0et2tMmwptfcn07UtoaZSBrmATM+Q4UlGEEKQwBAmyzb8OCsHF+0DZJJnU5hPVaJMrzNpAKODjm2dz4rWGEHyo7XIwk3GwyWZORjdAEvdgaVZQLxUwM1XewQmFk4B44upsVTvUVwO7t4pMTUdqPm2gAaKQ9YIHMMWN/bZKYSXlvgzcIQMS0/FY2S8aI+IuF8btm98pVtvUP9v5xADQgSR5RjFgwPaOFA==",
+  "hash": "QcTzBxey44BAtQk7RLHxiVb9KGZktA4oSzdyr8GZTGQ=",
+  "signature": "M+NoogmSstpvsdAebeZnCanzsrNMIgYPn3mu7bpHSjYA4NdS2a7lQ6v2ItfenCCmzJuc0/tJBRh2xZd0gQOk+OnQdmYUrSladOioIshkBhnC7yYzyfv+8Gxh7Q1msLGF9L972IyawjADBwVEgDFVdkPJTCvuclquqvTnUuMEY80eOEMRPgsexHoDU3+EdoMf9mNofuc9UYQFmBSL4UXYztj60g2tM74qU+eb2TOEvn7/UdADvmAeZ+jonW9pyBfDJLSLjL9PigBmo/EkhDaTdiquJSHAzt1zx2snXB/d9qINx0rdJp/76ccF2StOu+T+C0s+ZbO9HZfLyx/rra1Okw==",
   "url": "https://secure-ota-server.onrender.com/firmware/firmware_v2.bin",
   "version": 2
 }
