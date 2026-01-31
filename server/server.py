@@ -77,3 +77,26 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     app.run(host="0.0.0.0", port=port)
 
+# ================= ESP32 STATUS API =================
+
+latest_status = {
+    "firmware": "unknown",
+    "status": "no data yet"
+}
+
+@app.route("/esp32/status", methods=["POST"])
+def esp32_status():
+    global latest_status
+    data = request.get_json()
+    if not data:
+        return "Invalid JSON", 400
+
+    latest_status["firmware"] = data.get("firmware", "unknown")
+    latest_status["status"] = data.get("status", "unknown")
+
+    return "OK", 200
+
+
+@app.route("/esp32/status", methods=["GET"])
+def get_esp32_status():
+    return jsonify(latest_status)
