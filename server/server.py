@@ -3,7 +3,18 @@ import os
 import json
 from datetime import datetime
 
-# Store latest device status (in-memory)
+app = Flask(__name__)
+
+# --------------------------------------------------
+# Resolve absolute paths (works locally + on Render)
+# --------------------------------------------------
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+METADATA_PATH = os.path.join(BASE_DIR, "metadata.json")
+FIRMWARE_FOLDER = os.path.join(BASE_DIR, "..", "firmware")
+
+# --------------------------------------------------
+# In-memory device status (latest)
+# --------------------------------------------------
 latest_status = {
     "device_id": "ESP32_01",
     "firmware": "unknown",
@@ -12,22 +23,9 @@ latest_status = {
     "timestamp": None
 }
 
-
-app = Flask(__name__)
-
 # --------------------------------------------------
-# Resolve absolute paths (works locally + on Render)
+# OTA METADATA
 # --------------------------------------------------
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-METADATA_PATH = os.path.join(BASE_DIR, "metadata.json")
-FIRMWARE_FOLDER = os.path.join(BASE_DIR, "..", "firmware")
-
-
-# --------------------------------------------------
-# Routes
-# --------------------------------------------------
-
 @app.route("/metadata", methods=["GET"])
 def metadata():
     try:
@@ -40,7 +38,9 @@ def metadata():
             "details": str(e)
         }), 500
 
-
+# --------------------------------------------------
+# FIRMWARE DOWNLOAD
+# --------------------------------------------------
 @app.route("/firmware/<path:filename>", methods=["GET"])
 def firmware(filename):
     try:
@@ -51,52 +51,34 @@ def firmware(filename):
             "details": str(e)
         }), 500
 
-@app.route('/status', methods=['POST'])
+# --------------------------------------------------
+# ESP32 STATUS API (POST from device)
+# --------------------------------------------------
+@app.route("/status", methods=["POST"])
 def receive_status():
     global latest_status
     data = request.get_json(force=True)
 
     latest_status = {
         "device_id": data.get("device_id", "ESP32_01"),
-        "firmware": data.get("firmware"),
-        "state": data.get("state"),
-        "message": data.get("message"),
+        "firmware": data.get("firmware", "unknown"),
+        "state": data.get("state", "unknown"),
+        "message": data.get("message", ""),
         "timestamp": datetime.utcnow().isoformat()
     }
 
     return jsonify({"result": "status updated"}), 200
 
-@app.route('/status', methods=['GET'])
+# --------------------------------------------------
+# DASHBOARD STATUS API (GET from Processing)
+# --------------------------------------------------
+@app.route("/status", methods=["GET"])
 def get_status():
     return jsonify(latest_status), 200
 
 # --------------------------------------------------
-# Entry point (Render / local compatible)
+# ENTRY POINT (MUST BE LAST)
 # --------------------------------------------------
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     app.run(host="0.0.0.0", port=port)
-
-# ================= ESP32 STATUS API =================
-
-latest_status = {
-    "firmware": "unknown",
-    "status": "no data yet"
-}
-
-@app.route("/esp32/status", methods=["POST"])
-def esp32_status():
-    global latest_status
-    data = request.get_json()
-    if not data:
-        return "Invalid JSON", 400
-
-    latest_status["firmware"] = data.get("firmware", "unknown")
-    latest_status["status"] = data.get("status", "unknown")
-
-    return "OK", 200
-
-
-@app.route("/esp32/status", methods=["GET"])
-def get_esp32_status():
-    return jsonify(latest_status)
