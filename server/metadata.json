@@ -1,7 +1,7 @@
 {
   "firmware": "firmware_v3.bin",
   "hash": "TWnYqbVqWW21imzgkc+3mB4ZFr1VTUc+gypwIzhPH9E=",
-  "signature": "M+NoogmSstpvsdAebeZnCanzsrNMIgYPn3mu7bpHSjYA4NdS2a7lQ6v2ItfenCCmzJuc0/tJBRh2xZd0gQOk+OnQdmYUrSladOioIshkBhnC7yYzyfv+8Gxh7Q1msLGF9L972IyawjADBwVEgDFVdkPJTCvuclquqvTnUuMEY80eOEMRPgsexHoDU3+EdoMf9mNofuc9UYQFmBSL4UXYztj60g2tM74qU+eb2TOEvn7/UdADvmAeZ+jonW9pyBfDJLSLjL9PigBmo/EkhDaTdiquJSHAzt1zx2snXB/d9qINx0rdJp/76ccF2StOu+T+C0s+ZbO9HZfLyx/rra1Okw==GN7pYcGoWwaFZAcsVM9DuxshYCFcTyCW3W5VGR0Gab590MT0HBhyonWmrWrHOKsU9rfcs1grzHhBDGCcFMwG7FLXXYkLUijpb5KY9mdxrIDKGxcxmQ7Sc1IBnP7PR4qVQcFkv/Td432Lp+ZHm6OAHMtRfCoycJ9AbA8+GKW45ResVhq1XtTeXD+WPR2sBDwnpY67gUtluSwLzvFrZ9uS66O4vdj2NVb83mJXi1rYSIlFvh8CksE/XTE9coUX/yyMISefvCMQslFnA3DpwXxLT7BQG0/rCovqsZPdvTg2Dt2SJCK46OtGp8riyd0Uz/iQOIwfWcgNkYxIP3FnuPjX5A==",
+  "signature": "GN7pYcGoWwaFZAcsVM9DuxshYCFcTyCW3W5VGR0Gab590MT0HBhyonWmrWrHOKsU9rfcs1grzHhBDGCcFMwG7FLXXYkLUijpb5KY9mdxrIDKGxcxmQ7Sc1IBnP7PR4qVQcFkv/Td432Lp+ZHm6OAHMtRfCoycJ9AbA8+GKW45ResVhq1XtTeXD+WPR2sBDwnpY67gUtluSwLzvFrZ9uS66O4vdj2NVb83mJXi1rYSIlFvh8CksE/XTE9coUX/yyMISefvCMQslFnA3DpwXxLT7BQG0/rCovqsZPdvTg2Dt2SJCK46OtGp8riyd0Uz/iQOIwfWcgNkYxIP3FnuPjX5A==",
   "url": "https://secure-ota-server.onrender.com/firmware/firmware_v3.bin",
   "version": 3
 }
